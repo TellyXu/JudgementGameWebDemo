@@ -236,58 +236,58 @@ function ScrollTransparentNavbar() {
                 </DropdownMenu>
               </UncontrolledDropdown>
 
-              {/*<UncontrolledDropdown nav>*/}
-              {/*  <DropdownToggle*/}
-              {/*    caret*/}
-              {/*    color="default"*/}
-              {/*    data-toggle="dropdown"*/}
-              {/*    href="#pablo"*/}
-              {/*    id="navbarDropdownMenuLink"*/}
-              {/*    nav*/}
-              {/*    onClick={(e) => e.preventDefault()}*/}
-              {/*  >*/}
-              {/*    <img src={dashboard} alt="dashboard" />*/}
-              {/*    <p>Dashboard</p>*/}
-              {/*  </DropdownToggle>*/}
-              {/*  <DropdownMenu aria-labelledby="navbarDropdownMenuLink" right>*/}
-              {/*    <DropdownItem to="/dashboard1" tag={Link}>*/}
-              {/*      <i className="now-ui-icons business_chart-pie-36"></i>*/}
-              {/*      Dashboard 1*/}
-              {/*    </DropdownItem>*/}
-              {/*    <DropdownItem to="/dashboard2" tag={Link}>*/}
-              {/*      <i className="now-ui-icons business_chart-pie-36"></i>*/}
-              {/*      Dashboard 2*/}
-              {/*    </DropdownItem>*/}
-              {/*    <DropdownItem to="/dashboard3" tag={Link}>*/}
-              {/*      <i className="now-ui-icons business_chart-pie-36"></i>*/}
-              {/*      Dashboard 3*/}
-              {/*    </DropdownItem>*/}
-              {/*    <DropdownItem to="/dashboard4" tag={Link}>*/}
-              {/*      <i className="now-ui-icons business_chart-pie-36"></i>*/}
-              {/*      Dashboard 4*/}
-              {/*    </DropdownItem>*/}
-              {/*    <DropdownItem to="/dashboard5" tag={Link}>*/}
-              {/*      <i className="now-ui-icons business_chart-pie-36"></i>*/}
-              {/*      Dashboard 5*/}
-              {/*    </DropdownItem>*/}
-              {/*    <DropdownItem to="/dashboard6" tag={Link}>*/}
-              {/*      <i className="now-ui-icons business_chart-pie-36"></i>*/}
-              {/*      Dashboard 6*/}
-              {/*    </DropdownItem>*/}
-              {/*    <DropdownItem to="/dashboardPoll1" tag={Link}>*/}
-              {/*      <i className="now-ui-icons business_chart-pie-36"></i>*/}
-              {/*      Poll 1*/}
-              {/*    </DropdownItem>*/}
-              {/*    <DropdownItem to="/dashboardPoll2" tag={Link}>*/}
-              {/*      <i className="now-ui-icons business_chart-pie-36"></i>*/}
-              {/*      Poll 2*/}
-              {/*    </DropdownItem>*/}
-              {/*    <DropdownItem to="/dashboardPoll3" tag={Link}>*/}
-              {/*      <i className="now-ui-icons business_chart-pie-36"></i>*/}
-              {/*      Poll 3*/}
-              {/*    </DropdownItem>*/}
-              {/*  </DropdownMenu>*/}
-              {/*</UncontrolledDropdown>*/}
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="navbarDropdownMenuLink"
+                  nav
+                  onClick={(e) => e.preventDefault()}
+                >
+                  <img src={dashboard} alt="dashboard" />
+                  <p>Dashboard</p>
+                </DropdownToggle>
+                <DropdownMenu aria-labelledby="navbarDropdownMenuLink" right>
+                  <DropdownItem to="/dashboard1" tag={Link}>
+                    <i className="now-ui-icons business_chart-pie-36"></i>
+                    Dashboard 1
+                  </DropdownItem>
+                  <DropdownItem to="/dashboard2" tag={Link}>
+                    <i className="now-ui-icons business_chart-pie-36"></i>
+                    Dashboard 2
+                  </DropdownItem>
+                  <DropdownItem to="/dashboard3" tag={Link}>
+                    <i className="now-ui-icons business_chart-pie-36"></i>
+                    Dashboard 3
+                  </DropdownItem>
+                  <DropdownItem to="/dashboard4" tag={Link}>
+                    <i className="now-ui-icons business_chart-pie-36"></i>
+                    Dashboard 4
+                  </DropdownItem>
+                  <DropdownItem to="/dashboard5" tag={Link}>
+                    <i className="now-ui-icons business_chart-pie-36"></i>
+                    Dashboard 5
+                  </DropdownItem>
+                  <DropdownItem to="/dashboard6" tag={Link}>
+                    <i className="now-ui-icons business_chart-pie-36"></i>
+                    Dashboard 6
+                  </DropdownItem>
+                  <DropdownItem to="/dashboardPoll1" tag={Link}>
+                    <i className="now-ui-icons business_chart-pie-36"></i>
+                    Poll 1
+                  </DropdownItem>
+                  <DropdownItem to="/dashboardPoll2" tag={Link}>
+                    <i className="now-ui-icons business_chart-pie-36"></i>
+                    Poll 2
+                  </DropdownItem>
+                  <DropdownItem to="/dashboardPoll3" tag={Link}>
+                    <i className="now-ui-icons business_chart-pie-36"></i>
+                    Poll 3
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
 
               {/*/!* <NavItem>*/}
               {/*    <Button*/}
