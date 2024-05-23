@@ -48,7 +48,7 @@ function Dashboard({ show }) {
     // ~!
 
     const getaData = () => {
-        fetch("http://https://judgementgamewebdemo-backend.onrender.com:8000/find", { method: 'POST' })
+        fetch("https://judgementgamewebdemo-backend.onrender.com:8000/find", { method: 'POST' })
             .then((response) => response.json())
             .then(({ data, code }) => {
                 console.log('data' + code, data)

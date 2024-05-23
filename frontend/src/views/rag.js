@@ -164,7 +164,7 @@ function ContactUs() {
 
     useEffect(() => {
         document.title = ' RAG - OPENAI | CDHAI';
-        const ws = new WebSocket('ws://https://judgementgamewebdemo-backend.onrender.com:8000/ws'); // Ensure this is the correct URL for your WebSocket connection
+        const ws = new WebSocket('ws://judgementgamewebdemo-backend.onrender.com:8000/ws'); // Ensure this is the correct URL for your WebSocket connection
         ws.onopen = () => console.log('WebSocket Connected');
         ws.onmessage = (event) => {
             console.log('Message from WebSocket:', event.data);
@@ -211,7 +211,7 @@ function ContactUs() {
         formData.append('query', query);
 
         try {
-            const response = await fetch('http://https://judgementgamewebdemo-backend.onrender.com:8000/process-filings/', {
+            const response = await fetch('https://judgementgamewebdemo-backend.onrender.com:8000/process-filings/', {
                 method: 'POST',
                 body: formData,  // 使用 FormData 作为请求体
             });
