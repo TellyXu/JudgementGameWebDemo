@@ -35,7 +35,7 @@ function Game12() {
         };
 
         try {
-            const response = await fetch('http://localhost:8000/submit', {
+            const response = await fetch('http://https://judgementgamewebdemo-backend.onrender.com:8000/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -56,7 +56,7 @@ function Game12() {
     };
 
     const getResult = async () => {
-        fetch("http://localhost:8000/find", { method: 'POST' })
+        fetch("http://https://judgementgamewebdemo-backend.onrender.com:8000/find", { method: 'POST' })
             .then((response) => response.json())
             .then(({ data, code }) => {
                 console.log('data' + code, data)
