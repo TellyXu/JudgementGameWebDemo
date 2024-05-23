@@ -132,7 +132,6 @@ function Dashboard({ show }) {
                         backgroundPosition: 'center center', // 背景图片居中显示
                     }}>
                     <Container>
-
                         <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '80px' }}>
                             <Button color="info" onClick={_ => getaData()}>Refresh Dashboard</Button>
                             {(show <=6) && <Button
