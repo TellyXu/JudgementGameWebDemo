@@ -211,7 +211,7 @@ function ContactUs() {
         formData.append('query', query);
 
         try {
-            const response = await fetch('https://judgementgamewebdemo-backend.onrender.com:8000/process-filings/', {
+            const response = await fetch('https://judgementgamewebdemo-backend.onrender.com/process-filings/', {
                 method: 'POST',
                 body: formData,  // 使用 FormData 作为请求体
             });

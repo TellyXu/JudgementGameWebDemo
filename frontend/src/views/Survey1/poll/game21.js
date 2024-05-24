@@ -32,7 +32,7 @@ function Game12() {
         };
 
         try {
-            const response = await fetch('https://judgementgamewebdemo-backend.onrender.com:8000/submit', {
+            const response = await fetch('https://judgementgamewebdemo-backend.onrender.com/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -53,7 +53,7 @@ function Game12() {
     };
 
     const getResult = async () => {
-        fetch("https://judgementgamewebdemo-backend.onrender.com:8000/find", { method: 'POST' })
+        fetch("https://judgementgamewebdemo-backend.onrender.com/find", { method: 'POST' })
             .then((response) => response.json())
             .then(({ data, code }) => {
                 console.log('data' + code, data)
@@ -90,7 +90,7 @@ function Game12() {
                             disabled={submitDisabled ? true : false}
                             style={{ marginTop: '15px', width: '100%' }}
                             aria-describedby="emailHelp"
-                            placeholder="Enter some rate"
+                            placeholder="Enter a Rate"
                             type="number"
                             min={0}
                             max={10}

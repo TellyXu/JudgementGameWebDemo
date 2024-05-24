@@ -93,7 +93,7 @@ function ContactUs() {
         event.preventDefault();
         setError(''); // Clear any previous errors
         try {
-            const response = await fetch('https://judgementgamewebdemo-backend.onrender.com:8000/process-filings/', {
+            const response = await fetch('https://judgementgamewebdemo-backend.onrender.com/process-filings/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

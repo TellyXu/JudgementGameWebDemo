@@ -55,7 +55,7 @@ function PresentationHeader() {
         <div className="rellax-text-container rellax-text">
 
           <h1 className="h1-seo" data-rellax-speed="-1" style={{fontSize: '9em', marginBottom: '10px'}}>
-            Game of Judgement
+            Games of Judgement
           </h1>
           <div style={{height: '40px'}}></div>
 
