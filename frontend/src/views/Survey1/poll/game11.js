@@ -125,15 +125,22 @@ function Game11() {
                 style={{ marginRight: '20px', display: submitDisabled ? 'none' : 'block' }} >Submit</Button>
 
             <Button className="btn-round pull-right" disabled={submitDisabled ? false : true}
-                onClick={_ => {
-                    _.preventDefault()
-                    setSubmitDisabled(false)
-                    setSelect1('')
-                    navigate('/poll_12')
-                }}
-                color="success"
-                type="submit"
-                style={{ marginRight: '20px', display: submitDisabled ? 'block' : 'none' }} >Next question <span style={{ fontWeight: 'bold' }}>1/3</span></Button>
+                    onClick={event => {
+                        event.preventDefault();
+                        setSubmitDisabled(false);
+
+                        if (select1 === '1') { // If "YES" is selected
+                            navigate('/poll_12');
+                        } else if (select1 === '0') { // If "NO" is selected
+                            navigate('/poll_13');
+                        }
+                        setSelect1('');
+                    }}
+                    color="success"
+                    type="submit"
+                    style={{ marginRight: '20px', display: submitDisabled ? 'block' : 'none' }} >
+                Next question <span style={{ fontWeight: 'bold' }}>1/3</span>
+            </Button>
 
             <Button className="btn-round pull-right" disabled={submitDisabled ? false : true}
                 color="info"
