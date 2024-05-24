@@ -132,14 +132,14 @@ function Game11() {
                         if (select1 === '1') { // If "YES" is selected
                             navigate('/poll_12');
                         } else if (select1 === '0') { // If "NO" is selected
-                            navigate('/poll_13');
+                            navigate('/presentation');
                         }
                         setSelect1('');
                     }}
                     color="success"
                     type="submit"
                     style={{ marginRight: '20px', display: submitDisabled ? 'block' : 'none' }} >
-                Next question <span style={{ fontWeight: 'bold' }}>1/3</span>
+                {select1 === '0' ? 'Home Page' : <>Next question <span style={{ fontWeight: 'bold' }}>1/3</span></>}
             </Button>
 
             <Button className="btn-round pull-right" disabled={submitDisabled ? false : true}
