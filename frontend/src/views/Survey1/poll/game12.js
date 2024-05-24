@@ -22,7 +22,6 @@ function Game12() {
     const navigate = useNavigate();
 
 
-
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -70,7 +69,8 @@ function Game12() {
 
 
     const normalizeText = (text) => {
-        return text.replace(/\s+/g, '').toLowerCase();
+        if (text == null) return ""; // 检查null和undefined
+        return text.replace(/\s+/g, '').toLowerCase(); // 去除所有空格并转换为小写
     };
 
     const uniqueNormalizedValues = () => {

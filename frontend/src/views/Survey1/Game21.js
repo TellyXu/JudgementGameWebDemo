@@ -128,13 +128,14 @@ function Game21() {
 
             <Button className="btn-round pull-right"
                     color="info"
-                    style={{ marginRight: '20px', display: submitDisabled ? 'block' : 'none' }}
+                    style={{ marginRight: '20px' }}
                     onClick={(e) => {
                         e.preventDefault();
                         navigate('/presentation');
                     }}>
                 Home Page
             </Button>
+
         </form>
     );
 }

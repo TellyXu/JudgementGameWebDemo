@@ -19,6 +19,8 @@ function Dashboard({ show }) {
     const [survey2Data, setSurvey2Data] = useState([]);
     //~!
 
+    const [resultData, setResultData] = useState([]);
+
 
     // !~ survey3 data
     const [survey3Data, setSurvey3Data] = useState([]);
@@ -81,6 +83,7 @@ function Dashboard({ show }) {
 
                     // !~ poll1 data
                     setSurvey7Data(data.filter(item => item.survey_num === 7))
+                    setResultData(data.filter(item => item.survey_num === 7))
                     //~!
 
                     // !~ poll2 data
@@ -100,15 +103,27 @@ function Dashboard({ show }) {
     }
 
 
-    const repeatCount = (val, targets) => {
-        let count = 1
-        targets.map(item => item.text_val)
-        for (let index = 0; index < targets.length; index++) {
-            if (targets[index].text_val === val) count++
-        }
-        return count
-    }
 
+
+    const normalizeText = (text) => {
+        if (text == null) return ""; // 检查null和undefined
+        return text.replace(/\s+/g, '').toLowerCase(); // 去除所有空格并转换为小写
+    };
+
+    const uniqueNormalizedValues = () => {
+        const normalizedSet = new Set(resultData.map(item => normalizeText(item.text_val)));
+        return Array.from(normalizedSet);
+    };
+
+    const repeatCount = (normalizedVal) => {
+        let count = 0;
+        resultData.forEach(item => {
+            if (normalizeText(item.text_val) === normalizedVal) {
+                count++;
+            }
+        });
+        return count;
+    }
 
     React.useEffect(() => {
         getaData()
@@ -134,7 +149,8 @@ function Dashboard({ show }) {
                     }}>
                     <Container>
                         <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '80px' }}>
-                            <Button color="info" onClick={_ => getaData()}>Refresh Dashboard</Button>
+                            <Button color="info" onClick={()=>{navigate('/presentation');}}>Home Page</Button>
+                            <Button color="info" onClick={_ => getaData()} style={{ marginLeft: '20px' }}>Refresh Dashboard</Button>
                             {(show <=6) && <Button
                                 color="info"
                                 onClick={() => {
@@ -309,17 +325,20 @@ function Dashboard({ show }) {
                                         <p style={{ marginBottom: 0 }}>If yes, which one </p>
                                         <div style={{ height: '18.8rem', overflow: 'auto', color: "black", background: 'white', padding: '15px' }}>
                                             {
-                                                [...new Set(survey7Data.map(item => item.text_val))].map(item => {
-                                                    if (item) {
-                                                        return <div key={item} style={{ display: 'flex', textAlign: 'center' }}>
-                                                            <div style={{ display: 'flex' }}>
-                                                                <p style={{ width: '200px' }}>{item}</p>
-                                                                <p>repeat: {repeatCount(item, survey7Data)}</p>
-                                                            </div>
+                                                [...new Set(survey7Data.map(item => normalizeText(item.text_val)))].filter(item => item).map(normalizedItem => {
+                                                    // 查找符合标准化值的原始项数组
+                                                    const originalItems = survey7Data.filter(item => normalizeText(item.text_val) === normalizedItem);
+                                                    // 选择第一个匹配项作为代表显示，并确保它以小写形式显示
+                                                    const originalText = originalItems.length > 0 ? originalItems[0].text_val.toUpperCase() : "NO TEXT AVAILABLE";
+                                                    return (
+                                                        <div key={normalizedItem} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '10px 0' }}>
+                                                            <p style={{ width: '200px', textAlign: 'left' }}>{originalText}</p>
+                                                            <p>repeat: {repeatCount(normalizedItem)}</p>
                                                         </div>
-                                                    }
+                                                    );
                                                 })
                                             }
+
                                         </div>
                                     </div>
                                     <div>

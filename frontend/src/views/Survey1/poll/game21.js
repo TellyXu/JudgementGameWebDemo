@@ -135,14 +135,15 @@ function Game12() {
                 style={{ marginRight: '20px', display: submitDisabled ? 'block' : 'none' }} >Refresh result</Button>
 
             <Button className="btn-round pull-right"
-                    color="info"
-                    style={{ marginRight: '20px', display: submitDisabled ? 'block' : 'none' }}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        navigate('/presentation');
-                    }}>
-                Home Page
-            </Button>
+        color="info"
+        style={{ marginRight: '20px' }}
+        onClick={(e) => {
+            e.preventDefault();
+            navigate('/presentation');
+        }}>
+    Home Page
+</Button>
+
         </form>
     );
 }
