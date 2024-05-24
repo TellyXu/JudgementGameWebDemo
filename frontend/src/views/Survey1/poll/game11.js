@@ -134,6 +134,7 @@ function Game11() {
                         } else if (select1 === '0') { // If "NO" is selected
                             navigate('/presentation');
                         }
+
                         setSelect1('');
                     }}
                     color="success"
