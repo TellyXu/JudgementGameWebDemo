@@ -326,10 +326,10 @@ function Dashboard({ show }) {
                                         <div style={{ height: '18.8rem', overflow: 'auto', color: "black", background: 'white', padding: '15px' }}>
                                             {
                                                 [...new Set(survey7Data.map(item => normalizeText(item.text_val)))].filter(item => item).map(normalizedItem => {
-                                                    // 查找符合标准化值的原始项数组
+                                                    // Look for arrays of original items that match the normalized value
                                                     const originalItems = survey7Data.filter(item => normalizeText(item.text_val) === normalizedItem);
-                                                    // 选择第一个匹配项作为代表显示，并确保它以小写形式显示
-                                                    const originalText = originalItems.length > 0 ? originalItems[0].text_val.toUpperCase() : "NO TEXT AVAILABLE";
+                                                    // Pick the first matched item as the representative for display, and ensure it is displayed in lowercase without spaces
+                                                    const originalText = originalItems.length > 0 ? normalizeText(originalItems[0].text_val) : "no text available";
                                                     return (
                                                         <div key={normalizedItem} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '10px 0' }}>
                                                             <p style={{ width: '200px', textAlign: 'left' }}>{originalText}</p>
