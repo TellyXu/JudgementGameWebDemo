@@ -129,19 +129,19 @@ function Game31() {
             <div style={{ textAlign: 'center', padding: '0 40px', display: submitDisabled ? 'block' : 'none' }}>
                 <h3>Result</h3>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <p>A count:&nbsp;&nbsp;</p>
+                    <p>Vaccine A Count:&nbsp;&nbsp;</p>
                     <p style={{ fontWeight: 'bold' }}>{(resultData.filter(item => item.Q1_Answer === 1)).length}</p>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <p>B count:&nbsp;&nbsp;</p>
+                    <p>Vaccine B Count:&nbsp;&nbsp;</p>
                     <p style={{ fontWeight: 'bold' }}>{(resultData.filter(item => item.Q1_Answer === 2)).length}</p>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <p>A percentage:&nbsp;&nbsp;</p>
+                    <p>Vaccine A percentage:&nbsp;&nbsp;</p>
                     <p style={{ fontWeight: 'bold' }}>{Math.round((resultData.filter(item => item.Q1_Answer === 1).length / resultData.length * 100))}%</p>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <p>B percentage score:&nbsp;&nbsp;</p>
+                    <p>Vaccine B percentage:&nbsp;&nbsp;</p>
                     <p style={{ fontWeight: 'bold' }}>{Math.round((resultData.filter(item => item.Q1_Answer === 2).length / resultData.length * 100))}%</p>
                 </div>
             </div>

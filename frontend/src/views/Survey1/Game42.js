@@ -105,7 +105,7 @@ function Game32() {
                                 Vaccine C: it will save 200 (out of 600) people
                             </Label>
                             <Label style={{ marginBottom: '0' }}>
-                                Vaccine D: with probability 1/3, all 600 will be saved, 2/3 of the probability nobody of the 600 is saved.
+                                Vaccine D: with 1/3 probability, all 600 will be saved, with 2/3 probability nobody of the 600 will be saved.
                             </Label>
 
                             <Label style={{ marginBottom: '0', fontWeight: 'weight' }}>
@@ -130,19 +130,19 @@ function Game32() {
             <div style={{ textAlign: 'center', padding: '0 40px', display: submitDisabled ? 'block' : 'none' }}>
                 <h3>Result</h3>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <p>C count:&nbsp;&nbsp;</p>
+                    <p>Vaccine C Count:&nbsp;&nbsp;</p>
                     <p style={{ fontWeight: 'bold' }}>{(resultData.filter(item => item.Q1_Answer === 3)).length}</p>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <p>D count:&nbsp;&nbsp;</p>
+                    <p>Vaccine D Count:&nbsp;&nbsp;</p>
                     <p style={{ fontWeight: 'bold' }}>{(resultData.filter(item => item.Q1_Answer === 4)).length}</p>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <p>C percentage:&nbsp;&nbsp;</p>
+                    <p>Vaccine C percentage:&nbsp;&nbsp;</p>
                     <p style={{ fontWeight: 'bold' }}>{Math.round((resultData.filter(item => item.Q1_Answer === 3).length / resultData.length * 100))}%</p>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <p>D percentage score:&nbsp;&nbsp;</p>
+                    <p>Vaccine D percentage:&nbsp;&nbsp;</p>
                     <p style={{ fontWeight: 'bold' }}>{Math.round((resultData.filter(item => item.Q1_Answer === 4).length / resultData.length * 100))}%</p>
                 </div>
             </div>

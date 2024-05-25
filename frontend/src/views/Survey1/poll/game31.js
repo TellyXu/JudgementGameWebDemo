@@ -89,7 +89,7 @@ function Game31() {
                         </Label>
                         <UncontrolledDropdown>
                             <DropdownToggle caret color="primary">
-                                {money ? money === '0' ? 'Not likely' : money === '1' ? 'Don’t know' : 'Likely' : 'Select target'}
+                                {money ? money === '0' ? 'Not likely' : money === '1' ? 'Don’t know' : 'Likely' : 'Select response'}
                             </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem onClick={() => setMoney('0')}>Not likely</DropdownItem>
@@ -113,6 +113,7 @@ function Game31() {
                     :
                     ''
             }
+
 
             <Button className="btn-round pull-right" disabled={submitDisabled ? true : false}
                 color="info"

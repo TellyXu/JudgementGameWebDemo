@@ -90,14 +90,13 @@ function Game62() {
                 MedCo Inc. just developed a breakthrough therapy for a rare disease and did a study on its effectiveness. 100 patients took the medicine and 30 patients did not get better.
             </Label>
             <Label>
-                6-point scale, very good to very bad
             </Label>
             <Row>
                 <Col className="ml-auto mr-auto" >
                     <FormGroup>
                         <Label htmlFor="ageComparisonDropdown">
                             <Label style={{ marginBottom: '0', fontWeight: 'weight' }}>
-                                How would you evaluate the drug’s effect?
+                                On a "6-point scale" with 6 being very good, and 1 being very bad, how would you evaluate the drug’s effect?
                             </Label>
                         </Label>
 

@@ -89,7 +89,7 @@ function Game32() {
                         </Label>
                         <UncontrolledDropdown>
                             <DropdownToggle caret color="primary">
-                                {money ? money === '0' ? 'Not likely' : money === '1' ? 'Don’t know' : 'Likely' : 'Select target'}
+                                {money ? money === '0' ? 'Not likely' : money === '1' ? 'Don’t know' : 'Likely' : 'Select response'}
                             </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem onClick={() => setMoney('0')}>Not likely</DropdownItem>
