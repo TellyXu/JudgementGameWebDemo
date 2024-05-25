@@ -159,6 +159,8 @@ import {
     Col
 } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
+import './game21.css';
+import person1 from '../../../assets/svg/person1.svg';
 
 function CombinedGame() {
     const [money1, setMoney1] = useState('');
@@ -230,57 +232,130 @@ function CombinedGame() {
     };
 
     return (
+
         <form onSubmit={handleSubmit} className="gandhi-survey-form">
+            <Col style={{height:'70vh',overflow: 'auto' }}>
 
-            <Row className="ml-auto mr-auto" md="5.5" style={{ padding: '50px' }}>
-                <Label htmlFor="ageComparisonDropdown" style={{fontWeight: 'bold', fontSize: '18px'}}>
-                    Rate the risk of committing a crime
-                </Label>
-                <Label htmlFor="ageComparisonDropdown">
-                    (not a misdemeanor) on a scale of 1-10; 1=lowest risk, 10=highest risk
-                </Label>
+                <Row className="ml-auto mr-auto" style={{padding: '50px'}}>
 
-                <Col md="6" style={{padding: '20px'}}>
-                    <FormGroup>
-                        <Label style={{fontWeight: 'bold', fontSize: '18px'}}>
-                            Person 1
+
+                    <Col md="5" style={{padding: '00px'}}>
+                        <Label>
+                            Person 1 and a friend were in a rush to pick up a child from school. They attempted to steal
+                            a bike and a scooter (worth $80 collectively) belonging to a 6-year old. The mother saw the
+                            two people and yelled. They ran away. Person 1 had 4 previous juvenile misdemeanor charges.
                         </Label>
-                        <Input
-                            disabled={submitDisabled}
-                            type="number"
-                            min={1}
-                            max={10}
-                            value={money1}
-                            onChange={e => setMoney1(e.target.value)}
-                            required
-                        ></Input>
-                    </FormGroup>
-                </Col>
-                <Col md="6" style={{padding: '20px'}}>
-                    <FormGroup>
-                        <Label style={{fontWeight: 'bold', fontSize: '18px'}}>
-                            Person 2
+                        <div style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            width: '100%',
+                            height: '100%',
+                            backgroundImage: "url(" +
+                                require("assets/img/personPicture1.png") +
+                                ")",
+                            backgroundSize: 'cover',
+                            opacity: '0.2',
+                            zIndex: 0
+                        }}></div>
+                    </Col>
+                    <Col md="2"></Col>
+                    <Col md="5" style={{padding: '00px'}}>
+                        <Label>
+                            Person 2 stole tools from a hardware store worth $86.35. Previously Person 2 spent 5 years
+                            in prison and armed robbery and attempted armed robber and was charged a 3rd time for
+                            attempted armed robbery.
                         </Label>
-                        <Input
-                            disabled={submitDisabled}
-                            type="number"
-                            min={1}
-                            max={10}
-                            value={money2}
-                            onChange={e => setMoney2(e.target.value)}
-                            required
-                        ></Input>
-                    </FormGroup>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="6" style={{padding: '20px'}}>
-                    {
-                        resultData1.length > 0 ? <div style={{
-                                textAlign: 'center',
-                                padding: '0 40px',
-                                display: submitDisabled ? 'block' : 'none',
-                                fontSize: '14px'
+                        <div style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            width: '100%',
+                            height: '100%',
+                            backgroundImage: "url(" +
+                                require("assets/img/personPicture2.png") +
+                                ")",
+                            backgroundSize: 'cover',
+                            opacity: '0.2',
+                            zIndex: 0
+                        }}></div>
+                    </Col>
+                    <Col md="10" style={{padding: '00px'}}>
+                        <Label htmlFor="ageComparisonDropdown" style={{fontWeight: 'bold', fontSize: '18px'}}>
+                            You are the judge. You have to determine the risk of Person 1 or Person 2 committing a CRIME in
+                            the next two years.
+                        </Label>
+                    </Col>
+                    <Col md="2" style={{padding: '00px'}}>
+                        <div style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            width: '100%',
+                            height: '100%',
+                            backgroundImage: "url(" +
+                                require("assets/img/judgePicture3.png") +
+                                ")",
+                            backgroundSize: 'cover',
+                            opacity: '0.8',
+                            zIndex: 0
+                        }}></div>
+                    </Col>
+                    <Label>
+                        Rate the risk of committing a crime
+                    </Label>
+                    <Label htmlFor="ageComparisonDropdown">
+                        (not a misdemeanor) on a scale of 1-10; 1=lowest risk, 10=highest risk
+                    </Label>
+
+                    <Col md="6" style={{padding: '20px'}}>
+                        <FormGroup>
+                            <Label style={{fontWeight: 'bold', fontSize: '18px'}}>
+                                Person 1
+                            </Label>
+                            <Input
+                                disabled={submitDisabled}
+                                type="number"
+                                min={1}
+                                max={10}
+                                value={money1}
+                                onChange={e => setMoney1(e.target.value)}
+                                required
+                            ></Input>
+                        </FormGroup>
+                    </Col>
+                    <Col md="6" style={{padding: '20px'}}>
+                        <FormGroup>
+                            <Label style={{fontWeight: 'bold', fontSize: '18px'}}>
+                                Person 2
+                            </Label>
+                            <Input
+                                disabled={submitDisabled}
+                                type="number"
+                                min={1}
+                                max={10}
+                                value={money2}
+                                onChange={e => setMoney2(e.target.value)}
+                                required
+                            ></Input>
+                        </FormGroup>
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col md="6" style={{padding: '0px'}}>
+                        {
+                            resultData1.length > 0 ? <div style={{
+                                    textAlign: 'center',
+                                    padding: '0 40px',
+                                    display: submitDisabled ? 'block' : 'none',
+                                fontSize: '10px'
                             }}>
                                 {/*<p style={{fontWeight: 'bold'}}>0*/}
                                 {/*    percentage {Math.round((resultData1.filter(item => item.Q1_Answer === 0).length / resultData1.length * 100))}%</p>*/}
@@ -309,13 +384,13 @@ function CombinedGame() {
                             ''
                     }
                 </Col>
-                <Col md="6" style={{padding: '20px'}}>
+                <Col md="6" style={{padding: '0px'}}>
                     {
                         resultData2.length > 0 ? <div style={{
                                 textAlign: 'center',
                                 padding: '0 40px',
                                 display: submitDisabled ? 'block' : 'none',
-                                fontSize: '14px'
+                                fontSize: '10px'
                             }}>
                                 {/*<p style={{fontWeight: 'bold'}}>0*/}
                                 {/*    percentage {Math.round((resultData2.filter(item => item.Q1_Answer === 0).length / resultData2.length * 100))}%</p>*/}
@@ -368,7 +443,7 @@ function CombinedGame() {
                     }}>
                 Home Page
             </Button>
-
+            </Col>
         </form>
     );
 }
