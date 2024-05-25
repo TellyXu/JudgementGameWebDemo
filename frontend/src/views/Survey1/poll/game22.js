@@ -13,7 +13,7 @@ import {
 } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
 
-function Game12() {
+function Game22() {
     const [money, setMoney] = useState('');
     const [money2, setMoney2] = useState(-1);
     const [submitDisabled, setSubmitDisabled] = useState(false);
@@ -146,4 +146,4 @@ function Game12() {
     );
 }
 
-export default Game12;
+export default Game22;

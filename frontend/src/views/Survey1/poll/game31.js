@@ -115,6 +115,18 @@ function Game31() {
             }
 
 
+            <Button className="btn-round pull-right" disabled={submitDisabled ? false : true}
+                    onClick={event => {
+                        event.preventDefault();
+                        setSubmitDisabled(false);
+                        navigate('/poll_32');
+                    }}
+                    color="success"
+                    type="submit"
+                    style={{ marginRight: '20px', display: submitDisabled ? 'block' : 'none' }} >
+                 <>Next question <span style={{ fontWeight: 'bold' }}>1/2</span></>
+            </Button>
+
             <Button className="btn-round pull-right" disabled={submitDisabled ? true : false}
                 color="info"
                 type="submit"
@@ -130,14 +142,14 @@ function Game31() {
                 style={{ marginRight: '20px', display: submitDisabled ? 'block' : 'none' }} >Refresh result</Button>
 
             <Button className="btn-round pull-right"
-        color="info"
-        style={{ marginRight: '20px' }}
-        onClick={(e) => {
-            e.preventDefault();
-            navigate('/presentation');
-        }}>
-    Home Page
-</Button>
+                color="info"
+                style={{ marginRight: '20px' }}
+                onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/presentation');
+                }}>
+            Home Page
+            </Button>
 
         </form >
     );

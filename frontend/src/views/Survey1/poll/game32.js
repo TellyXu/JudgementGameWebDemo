@@ -113,11 +113,16 @@ function Game32() {
                     :
                     ''
             }
-
             <Button className="btn-round pull-right" disabled={submitDisabled ? true : false}
                 color="info"
                 type="submit"
                 style={{ marginRight: '20px', display: submitDisabled ? 'none' : 'block' }} >Submit</Button>
+
+            <Button className="btn-round pull-right" disabled={true}
+                    color="success"
+                    type="submit"
+                    style={{ marginRight: '20px', display: submitDisabled ? 'block' : 'none' }} ><span style={{ fontWeight: 'bold' }}>2/2</span></Button>
+
 
             <Button className="btn-round pull-right" disabled={submitDisabled ? false : true}
                 color="info"
@@ -127,6 +132,15 @@ function Game32() {
                     getResult()
                 }}
                 style={{ marginRight: '20px', display: submitDisabled ? 'block' : 'none' }} >Refresh result</Button>
+            <Button className="btn-round pull-right"
+                    color="info"
+                    style={{ marginRight: '20px' }}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        navigate('/presentation');
+                    }}>
+                Home Page
+            </Button>
         </form>
     );
 }
