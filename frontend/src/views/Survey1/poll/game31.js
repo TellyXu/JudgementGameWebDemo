@@ -150,7 +150,6 @@ function Game31() {
                 }}>
             Home Page
             </Button>
-
         </form >
     );
 }
