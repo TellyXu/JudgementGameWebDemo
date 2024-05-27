@@ -215,6 +215,7 @@ function CombinedGame() {
         }
     };
 
+
     const getResult = async () => {
         try {
             const response = await fetch("https://judgementgamewebdemo-backend.onrender.com/find", { method: 'POST' });
