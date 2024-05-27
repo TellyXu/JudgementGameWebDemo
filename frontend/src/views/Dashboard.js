@@ -7,6 +7,9 @@ import { Button } from "reactstrap";
 import FooterBlack from "../components/Footers/FooterBlack";
 import { Card, Container, Row, Col } from "reactstrap";
 import { useNavigate } from 'react-router-dom';
+
+import "./base.scss"
+
 function Dashboard({ show }) {
     const navigate = useNavigate();
 
@@ -149,9 +152,9 @@ function Dashboard({ show }) {
                     }}>
                     <Container>
                         <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '80px' }}>
-                            <Button color="info" onClick={()=>{navigate('/presentation');}}>Home Page</Button>
+                            <Button color="info" onClick={() => { navigate('/presentation'); }}>Home Page</Button>
                             <Button color="info" onClick={_ => getaData()} style={{ marginLeft: '20px' }}>Refresh Dashboard</Button>
-                            {(show <=6) && <Button
+                            {(show <= 6) && <Button
                                 color="info"
                                 onClick={() => {
                                     if (show === 1 || show === 2) {
@@ -183,15 +186,21 @@ function Dashboard({ show }) {
                             show === 1 && <div>
                                 <h2 style={{ color: 'white', textAlign: 'center' }}>Judgement 1</h2>
                                 <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
-                                    <div>
+                                    <div style={{ background: '#ffffff', padding: '15px', borderRadius: '10px' }}>
+                                        <p className="text-14">
+                                            Did Gandhi die before or after the age of 144? (GROUP1)
+                                        </p>
                                         <PiA filter={[1, 0]} pData={p0} keyName='Q1_Answer' tag={['Before', 'After']} />
                                     </div>
-                                    <div style={{ marginLeft: '20px' }}>
+                                    <div style={{ marginLeft: '20px', background: '#ffffff', padding: '15px', borderRadius: '10px' }}>
+                                        <p className="text-14">
+                                            Did Gandhi die before or after the age of 144? (GROUP2)
+                                        </p>
                                         <PiA filter={[1, 0]} pData={p1} keyName='Q1_Answer' tag={['Before', 'After']} />
                                     </div>
                                 </div>
 
-                                <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
+                                <div className="mt-2" style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
                                     <div>
                                         <Box pData={p2} name='Group1_Q2_Answer' keyName='Q2_Answer' />
                                     </div>
@@ -206,47 +215,70 @@ function Dashboard({ show }) {
                         }
 
                         {
-                            show === 2 && <div>
+                            show === 2 && <div style={{ marginTop: "10px" }}>
                                 <h2 style={{ color: 'white', textAlign: 'center' }}>Judgement 2</h2>
+
+                                <div className="mb-20 cbg-white text-black p-4 rounded-md">
+                                    <p className="m-0 text-center mt-4">How much would you donate?</p>
+                                </div>
+
+
                                 <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
-                                    <div>
+
+                                    <div className="bbg-white">
+                                        <div class={'container-tips text-14'}>
+                                            <p className="m-0 tips">You are generally a charitable person and regularly donate. Your favorite charity reached out recently and requested a donation of $400.</p>
+                                        </div>
+
                                         <Box pData={survey2Data.filter(item => item.version === 1)} name='survey2_Q1_Answer'
                                             keyName='Q1_Answer' />
                                     </div>
-                                    <div style={{ marginLeft: "20px" }}>
+
+                                    <div className="bbg-white ml-20">
+                                        <div class={'container-tips text-14'}>
+                                            <p className="m-0 tips">You are generally a charitable person and regularly donate. Your favorite charity reached out recently and requested a donation of $400.</p>
+                                        </div>
+
                                         <Box pData={survey2Data.filter(item => item.version === 2)} name='survey2_Q2_Answer'
                                             keyName='Q1_Answer' />
                                     </div>
+
+                                    <div className="bbg-white ml-20 mt-20">
+                                        <div class={'container-tips text-14'}>
+
+                                        </div>
+                                        <div>
+                                            <Box pData={p2} name='ALL_GROUP_Q2_Answer' keyName='Q2_Answer' />
+                                        </div>
+                                    </div>
+
+
                                 </div>
                             </div>
                         }
 
                         {
-                            show === 3 && <div>
-                                <h2 style={{ color: 'white', textAlign: 'center' }}>Judgement 3</h2>
-                                {/*<div style={{color: 'white', textAlign: 'left', width: '700px', margin: '0 auto'}}>*/}
-                                {/*    <p style={{marginBottom: '0'}}>*/}
-                                {/*        Vaccine A: 400 (out of 600) people will die from this disease;*/}
-                                {/*    </p>*/}
-                                {/*    <p style={{marginBottom: '0'}}>*/}
-                                {/*        Vaccine B: with 1/3 probability, nobody dies; with 2/3 probability all 600 will die.*/}
-                                {/*    </p>*/}
-                                {/*    <p style={{marginBottom: '0'}}>*/}
-                                {/*        Vaccine C: it will save 200 (out of 600) people*/}
-                                {/*    </p>*/}
-                                {/*    <p style={{marginBottom: '0'}}>*/}
-                                {/*        Vaccine D: with probability 1/3, all 600 will be saved, 2/3 of the probability nobody of the*/}
-                                {/*        600 is saved.*/}
-                                {/*    </p>*/}
-                                {/*</div>*/}
+                            show === 5 && <div>
+                                <h2 style={{ color: 'white', textAlign: 'center' }}>Judgement 5</h2>
+
+                                <div className="mb-20 cbg-white text-black p-4 rounded-md">
+                                    <p className="m-0 text-center mt-4">Will you shift to another store?</p>
+                                </div>
+
                                 <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
-                                    <div>
-                                        <PiA filter={[1, 2]} pData={survey3Data.filter(item => item.version === 1)}
-                                            name='survey3_Q1_Answer' keyName='Q1_Answer' tag={['A', 'B']} />
+                                    <div className="bbg-white-400">
+                                        <div class={'container-tips text-14'}>
+                                            <p className="m-0 tips">You are shopping for a luxurious gray pinstripe suit for $425. You are about to buy it, and then another customer whispers that the exact same suit is on sale for $418 at another store 15 minutes away.</p>
+                                        </div>
+                                        <PiA filter={[0, 1]} pData={survey4Data.filter(item => item.version === 1)}
+                                            name='survey4_Q1_Answer' keyName='Q1_Answer' tag={['YES', 'NO']} />
                                     </div>
-                                    <div style={{ marginLeft: "20px" }}>
-                                        <PiA filter={[3, 4]} pData={survey3Data.filter(item => item.version === 2)}
-                                            name='survey3_Q2_Answer' keyName='Q1_Answer' tag={['C', 'D']} />
+                                    <div className="bbg-white-400 ml-20">
+                                        <div class={'container-tips text-14'}>
+                                            <p className="m-0 tips">You go to a store and find a nice pen for $25. Then you remember that the same pen is on sale for $18 at another store 15 minutes away.</p>
+                                        </div>
+                                        <PiA filter={[0, 1]} pData={survey4Data.filter(item => item.version === 2)}
+                                            name='survey4_Q2_Answer' keyName='Q1_Answer' tag={['YES', 'NO']} />
                                     </div>
                                 </div>
                             </div>
@@ -257,28 +289,29 @@ function Dashboard({ show }) {
                                 <h2 style={{ color: 'white', textAlign: 'center' }}>Judgement 4</h2>
                                 <div style={{ color: 'white', textAlign: 'left', width: '700px', margin: '0 auto' }}>
                                 </div>
-                                <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
-                                    <div>
-                                        <PiA filter={[0, 1]} pData={survey4Data.filter(item => item.version === 1)}
-                                            name='survey4_Q1_Answer' keyName='Q1_Answer' tag={['YES', 'NO']} />
-                                    </div>
-                                    <div style={{ marginLeft: "20px" }}>
-                                        <PiA filter={[0, 1]} pData={survey4Data.filter(item => item.version === 2)}
-                                            name='survey4_Q2_Answer' keyName='Q1_Answer' tag={['YES', 'NO']} />
-                                    </div>
-                                </div>
-                            </div>
-                        }
 
-                        {
-                            show === 5 && <div>
-                                <h2 style={{ color: 'white', textAlign: 'center' }}>Judgement 5</h2>
-                                <div style={{ color: 'white', textAlign: 'left', width: '700px', margin: '0 auto' }}>
+                                <div className="mb-20 cbg-white text-black p-4 rounded-md">
+                                    <p className="m-0 tips">Congratulations! You have just been elected as mayor of a small town in Cold Mountain with 600 inhabitants.Bad news! Just after you are elected, a mysterious epidemic disease (much worse than the H1N1 flu) will attack your small town very soon.The doctors rush to look for cure for the disease, and find two kinds of vaccines. You can only choose one to use in your town.</p>
+                                    <p className="m-0 text-center mt-4">Which one will you choose?</p>
                                 </div>
+
                                 <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
-                                    <div>
-                                        <PiA filter={[0, 1]} pData={survey5Data} name='survey2_Q1_Answer' keyName='Q1_Answer'
-                                            tag={['golf', 'Soccer']} />
+                                    <div className="bbg-white">
+                                        <div class={'container-tips text-14'}>
+                                            <p className="m-0 text-left mt-4">A: 400 (out of 600) people will die from this disease;Vaccine B: with 1/3 probability, nobody dies; with 2/3 probability all 600 will die.</p>
+                                            <p className="m-0 text-left mt-4">B: with 1/3 probability, nobody dies; with 2/3 probability all 600 will die.</p>
+                                        </div>
+
+                                        <PiA filter={[1, 2]} pData={survey3Data.filter(item => item.version === 1)}
+                                            name='survey3_Q1_Answer' keyName='Q1_Answer' tag={['A', 'B']} />
+                                    </div>
+                                    <div className="bbg-white ml-20">
+                                        <div class={'container-tips text-14'}>
+                                            <p className="m-0 text-left mt-4">C: it will save 200 (out of 600) people </p>
+                                            <p className="m-0 text-left mt-4">D: with 1/3 probability, all 600 will be saved, with 2/3 probability nobody of the 600 will be saved. </p>
+                                        </div>
+                                        <PiA filter={[3, 4]} pData={survey3Data.filter(item => item.version === 2)}
+                                            name='survey3_Q2_Answer' keyName='Q1_Answer' tag={['C', 'D']} />
                                     </div>
                                 </div>
                             </div>
@@ -289,13 +322,44 @@ function Dashboard({ show }) {
                                 <h2 style={{ color: 'white', textAlign: 'center' }}>Judgement 6</h2>
                                 <div style={{ color: 'white', textAlign: 'left', width: '700px', margin: '0 auto' }}>
                                 </div>
+
+                                <div className="mb-20 cbg-white text-black p-4 rounded-md">
+                                    <p className="m-0 tips">You go to an office end-of-year party where your colleagues have brought their partners. Your colleague introduces you to her partner, Mark, noting that Mark has a Ph.D., he loves poetry, and loved our cat!</p>
+                                    <p className="m-0 tips">You have to guess if Mark plays Golf or Soccer</p>
+                                </div>
+
                                 <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
-                                    <div>
+                                    <div className="bbg-white">
+                                        <PiA filter={[0, 1]} pData={survey5Data} name='survey2_Q1_Answer' keyName='Q1_Answer'
+                                            tag={['golf', 'Soccer']} />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        {
+                            show === 3 && <div>
+                                <h2 style={{ color: 'white', textAlign: 'center' }}>Judgement 3</h2>
+                                <div style={{ color: 'white', textAlign: 'left', width: '700px', margin: '0 auto' }}>
+                                </div>
+
+                                <div className="mb-20 cbg-white text-black p-4 rounded-md">
+                                    <p className="m-0 tips">On a "6-point scale" with 6 being very good, and 1 being very bad, how would you evaluate the drug’s effect?</p>
+                                </div>
+
+                                <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
+                                    <div className="bbg-white">
+                                        <div className="container-tips text-14">
+                                            <p className="m-0 text-center mt-4">MedCo Inc. just developed a breakthrough therapy for a rare disease and did a study on its effectiveness. 100 patients took the medicine and 30 patients did not get better.</p>
+                                        </div>
                                         <PiA isDiyData filter={[1, 2, 3, 4, 5, 6]}
                                             pData={survey6Data.filter(item => item.version === 1)} name='survey4_Q1_Answer'
                                             keyName='Q1_Answer' tag={['1', '2', '3', '4', '5', '6']} />
                                     </div>
-                                    <div style={{ marginLeft: "20px" }}>
+                                    <div className="bbg-white ml-20">
+                                        <div className="container-tips text-14">
+                                            <p className="m-0 text-center mt-4">MedCo Inc. just developed a breakthrough therapy for a rare disease and did a study on its effectiveness. 100 patients took the medicine and 30 patients did not get better.</p>
+                                        </div>
                                         <PiA isDiyData filter={[1, 2, 3, 4, 5, 6]}
                                             pData={survey6Data.filter(item => item.version === 2)} name='survey4_Q2_Answer'
                                             keyName='Q1_Answer' tag={['1', '2', '3', '4', '5', '6']} />

@@ -42,7 +42,9 @@ function Pia({ pData, keyName, tag, filter, isDiyData }) {
 
     const option = {
       tooltip: {
-        trigger: 'item'
+        trigger: 'item',
+        formatter: "{a} {b} : {c} ({d}%)",
+        fontWeight: 'bold'
       },
       legend: {
         top: '5%',
@@ -87,9 +89,8 @@ function Pia({ pData, keyName, tag, filter, isDiyData }) {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <Card style={{ padding: '20px' }}>
-
-        <div ref={chartRefPia} style={{ height: "260px", width: filter.length === 10 ? "450px" : "380px" }}></div>
+      <Card>
+        <div ref={chartRefPia} style={{ height: "260px", width: filter.length === 10 ? "450px" : "380px", margin:'0 auto' }}></div>
       </Card>
     </div>
   );
