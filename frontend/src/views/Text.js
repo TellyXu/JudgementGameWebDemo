@@ -61,7 +61,7 @@ function Text({ show }) {
                             backgroundSize: 'auto 80%',  // 调整背景图像的大小
                             backgroundPosition: 'center',
                             backgroundRepeat: 'no-repeat',
-                            opacity: 0.5,  // 仅设置背景层的透明度
+                            opacity: 0.3,  // 仅设置背景层的透明度
                         }} />
                         <CardBody style={{
                             flexGrow: 1,
