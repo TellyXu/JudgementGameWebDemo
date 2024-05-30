@@ -48,26 +48,26 @@ root.render(
   <BrowserRouter>
     <ModalProvider> {/* Wrap all routes with ModalProvider */}
     <Routes>
-      <Route path="/about-us" element={<AboutUs />} />
-      <Route path="/blog-post" element={<BlogPost />} />
-      <Route path="/blog-posts" element={<BlogPosts />} />
-      <Route path="/contact-us" element={<ContactUs />} />
-      <Route path="/e-commerce" element={<Ecommerce />} />
-      <Route path="/index" element={<Index />} />
-      <Route path="/landing-page" element={<LandingPage />} />
-      <Route path="/login-page" element={<LoginPage />} />
-      <Route path="/nucleo-icons" element={<NucleoIcons />} />
+      <Route path="/about-us" element={<Presentation />} />
+      <Route path="/blog-post" element={<Presentation />} />
+      <Route path="/blog-posts" element={<Presentation />} />
+      <Route path="/contact-us" element={<Presentation />} />
+      <Route path="/e-commerce" element={<Presentation />} />
+      <Route path="/index" element={<Presentation />} />
+      <Route path="/landing-page" element={<Presentation />} />
+      <Route path="/login-page" element={<Presentation />} />
+      <Route path="/nucleo-icons" element={<Presentation />} />
       <Route path="/presentation" element={<Presentation />} />
 
-      <Route path="/pricing" element={<Pricing />} />
-      <Route path="/product-page" element={<ProductPage />} />
-      <Route path="/profile-page" element={<ProfilePage />} />
-      <Route path="/sections" element={<Sections />} />
-      <Route path="/sign-up" element={<SignupPage />} />
-      <Route path="/test" element={<Test />} />
-      <Route path="/tool" element={<Tool />} />
-      <Route path="/toolfile" element={<Tool_File />} />
-      <Route path="/rag" element={<Rag />} />
+      <Route path="/pricing" element={<Presentation />} />
+      <Route path="/product-page" element={<Presentation />} />
+      <Route path="/profile-page" element={<Presentation />} />
+      <Route path="/sections" element={<Presentation />} />
+      <Route path="/sign-up" element={<Presentation />} />
+      <Route path="/test" element={<Presentation />} />
+      <Route path="/tool" element={<Presentation />} />
+      <Route path="/toolfile" element={<Presentation />} />
+      <Route path="/rag" element={<Presentation />} />
 
       <Route path="/judgement11" element={<Survey11 />} />
       <Route path="/judgement12" element={<Survey12 />} />
@@ -95,26 +95,26 @@ root.render(
       <Route path="/poll_31" element={<Survey survey={'poll-3-1'} key={'poll-3-1'} />} />
       <Route path="/poll_32" element={<Survey survey={'poll-3-2'} key={'poll-3-2'} />} />
       {/* ~! */}
-
+      {/*
       <Route path="/dashboard1" element={<Dashboard show={1} />} />
       <Route path="/dashboard2" element={<Dashboard show={2} />} />
       <Route path="/dashboard3" element={<Dashboard show={3} />} />
       <Route path="/dashboard4" element={<Dashboard show={4} />} />
       <Route path="/dashboard5" element={<Dashboard show={5} />} />
       <Route path="/dashboard6" element={<Dashboard show={6} />} />
+      */}
       {/*  */}
+      {/*
       <Route path="/dashboardPoll1" element={<Dashboard show={7} />} />
       <Route path="/dashboardPoll2" element={<Dashboard show={8} />} />
       <Route path="/dashboardPoll3" element={<Dashboard show={9} />} />
-
+      */}
 
       {/*  */}
       <Route path="/text12" element={<Text show={12} />} />
       <Route path="/text34" element={<Text show={34} />} />
       <Route path="/text5" element={<Text show={5} />} />
       <Route path="/text6" element={<Text show={6} />} />
-
-
 
       <Route path="*" element={<Navigate to="/presentation" replace />} />
     </Routes>

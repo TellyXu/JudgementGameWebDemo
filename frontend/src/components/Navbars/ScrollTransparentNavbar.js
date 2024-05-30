@@ -236,7 +236,7 @@ function ScrollTransparentNavbar() {
                   {/*</DropdownItem>*/}
                 </DropdownMenu>
               </UncontrolledDropdown>
-
+              {/*
               <UncontrolledDropdown nav>
                 <DropdownToggle
                   caret
@@ -289,7 +289,7 @@ function ScrollTransparentNavbar() {
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-
+              */}
               {/*/!* <NavItem>*/}
               {/*    <Button*/}
               {/*        className="nav-link btn-default"*/}
