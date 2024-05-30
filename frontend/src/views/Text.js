@@ -61,7 +61,7 @@ function Text({ show }) {
                             backgroundSize: 'auto 80%',  // 调整背景图像的大小
                             backgroundPosition: 'center',
                             backgroundRepeat: 'no-repeat',
-                            opacity: 0.3,  // 仅设置背景层的透明度
+                            opacity: 0.2,  // 仅设置背景层的透明度
                         }} />
                         <CardBody style={{
                             flexGrow: 1,
@@ -72,17 +72,17 @@ function Text({ show }) {
                             zIndex: 1,  // 提升层级高于背景层
                             backgroundColor: 'rgba(255, 255, 255, 0.4)',  // 添加半透明白色背景以增强文字可读性
                         }}>
-                            <CardTitle tag="h2" style={{ marginBottom: 'auto' }}>ANCHORING EFFECT BIAS</CardTitle>
+                            <CardTitle tag="h2" style={{ marginBottom: 'auto', fontWeight: 'bold' }}>ANCHORING EFFECT BIAS</CardTitle>
                             <div style={{
                                 flexGrow: 1,
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center'
                             }}>
-                                <CardText style={{ fontSize: '1.2rem', color: 'black' }}>
+                                <CardText style={{ fontSize: '1.2rem', color: 'black', fontWeight: 'bold'  }}>
                                     Tendency to favor information received early in the decision making process.
                                 </CardText>
-                                <CardText style={{ fontSize: '1.2rem', color: 'black' }}>
+                                <CardText style={{ fontSize: '1.2rem', color: 'black', fontWeight: 'bold'  }}>
                                     Occurs most frequently when you don’t know the correct answer and hold on to the information provided as an "anchor".
                                 </CardText>
                             </div>
@@ -111,16 +111,17 @@ function Text({ show }) {
                             backgroundSize: 'auto 95%',  // 调整背景图像的大小
                             backgroundPosition: 'center',
                             backgroundRepeat: 'no-repeat',
-                            opacity: 0.2,  // 仅设置背景层的透明度
+                            opacity: 0.1,  // 仅设置背景层的透明度
                         }}/>
                         <CardBody
                             style={{flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                            <CardTitle tag="h2" style={{marginBottom: 'auto'}}>FRAMING AND LOSS AVERSION</CardTitle>
+                            <CardTitle tag="h2" style={{marginBottom: 'auto', fontWeight: 'bold'}}>FRAMING AND LOSS AVERSION</CardTitle>
                             <div style={{
                                 flexGrow: 1,
                                 display: 'flex',
                                 flexDirection: 'column',
-                                justifyContent: 'center'
+                                justifyContent: 'center',
+                                fontWeight: 'bold'
                             }}>
                                 <Label style={{fontSize: '1.2rem', color: 'black'}}>
                                     Tendency to react differently to a particular decision depending on how it’s
@@ -173,21 +174,22 @@ function Text({ show }) {
                                 backgroundSize: 'auto 95%',  // 调整背景图像的大小
                                 backgroundPosition: 'center',
                                 backgroundRepeat: 'no-repeat',
-                                opacity: 0.2,  // 仅设置背景层的透明度
+                                opacity: 0.1,  // 仅设置背景层的透明度
                             }}/>
-                            <CardTitle tag="h2" style={{marginBottom: 'auto'}}>MENTAL ACCOUNTING</CardTitle>
+                            <CardTitle tag="h2" style={{marginBottom: 'auto', fontWeight: 'bold'}}>MENTAL ACCOUNTING</CardTitle>
                             <div style={{
                                 flexGrow: 1,
                                 display: 'flex',
                                 flexDirection: 'column',
-                                justifyContent: 'center'
+                                justifyContent: 'center',
+                                fontWeight: 'bold'
                             }}>
-                                <CardText style={{fontSize: '1.2rem', color: 'black'}}>
+                                <CardText style={{fontSize: '1.2rem', color: 'black', fontWeight: 'bold'}}>
                                     Human tendency to assign subjective value to our money, in violation of basic
                                     economic principles. Money has consistent objective value, but how it is spent is
                                     often subject to different rules.
                                 </CardText>
-                                <CardText style={{fontSize: '1.2rem', color: 'black'}}>
+                                <CardText style={{fontSize: '1.2rem', color: 'black', fontWeight: 'bold'}}>
                                     Can result in irrational and counterproductive investment behavior.
                                 </CardText>
                             </div>
@@ -217,22 +219,23 @@ function Text({ show }) {
                                 backgroundSize: 'auto 95%',  // 调整背景图像的大小
                                 backgroundPosition: 'center',
                                 backgroundRepeat: 'no-repeat',
-                                opacity: 0.2,  // 仅设置背景层的透明度
+                                opacity: 0.1,  // 仅设置背景层的透明度
                             }}/>
 
-                            <CardTitle tag="h2" style={{marginBottom: 'auto'}}>BASE RATE FALLACY</CardTitle>
+                            <CardTitle tag="h2" style={{marginBottom: 'auto', fontWeight: 'bold'}}>BASE RATE FALLACY</CardTitle>
                             <div style={{
                                 flexGrow: 1,
                                 display: 'flex',
                                 flexDirection: 'column',
-                                justifyContent: 'center'
+                                justifyContent: 'center',
+                                fontWeight: 'bold'
                             }}>
-                                <CardText style={{fontSize: '1.2rem', color: 'black'}}>
+                                <CardText style={{fontSize: '1.2rem', color: 'black', fontWeight: 'bold'}}>
                                     Human tendency to ignore relevant statistical or other information in favor of
                                     “case-specific information.” Rather than consider the base rate or prior probability
                                     of an event, humans are distracted by irrelevant information.
                                 </CardText>
-                                <CardText style={{fontSize: '1.2rem', color: 'black'}}>
+                                <CardText style={{fontSize: '1.2rem', color: 'black', fontWeight: 'bold'}}>
                                     Leads to inaccurate probability judgements, jumping to conclusions about individuals
                                     based on initial impressions, and the perpetuation of stereotypes.
                                 </CardText>

@@ -3,12 +3,15 @@ import React, { useState } from "react";
 import ScrollTransparentNavbar from "components/Navbars/ScrollTransparentNavbar.js";
 import PiA from "../components/Pia"
 import Box from "../components/Box"
+import combinedbox from "../components/combinedbox"
 import { Button } from "reactstrap";
 import FooterBlack from "../components/Footers/FooterBlack";
 import { Card, Container, Row, Col, Alert } from "reactstrap";
 import { useNavigate } from 'react-router-dom';
 
 import "./base.scss"
+import CombinedBoxEchart from "../components/combinedbox";
+import DualBoxEchart from "../components/combinedbox";
 
 function Dashboard({ show }) {
     const navigate = useNavigate();
@@ -189,34 +192,41 @@ function Dashboard({ show }) {
                                 <h2 style={{ color: 'white', textAlign: 'center' }}>Judgement 1</h2>
                                 <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
                                     <div style={{ background: '#ffffff', padding: '15px', borderRadius: '10px' }}>
-                                        <p className="text-14">
-                                            Did Gandhi die before or after the age of 144? (GROUP1)
+                                        <p>
+                                            Did Gandhi die before or after the age of <strong>144</strong>?
                                         </p>
                                         {/* <PiA filter={[1, 0]} pData={p0} keyName='Q1_Answer' tag={['Before', 'After']} /> */}
                                         <hr></hr>
-                                        <p>Before: {Math.round((p0.filter(item => item.Q1_Answer === 0).length / (_data.filter(item => item.survey_num === 1 && item.version === 1).length)) * 100)}%</p>
-                                        <p>After: {Math.round((p0.filter(item => item.Q1_Answer === 1).length / (_data.filter(item => item.survey_num === 1 && item.version === 1).length)) * 100)}%</p>
+                                        <p className="text-14">Before: {Math.round((p0.filter(item => item.Q1_Answer === 0).length / (_data.filter(item => item.survey_num === 1 && item.version === 1).length)) * 100)}%</p>
+                                        <p className="text-14">After: {Math.round((p0.filter(item => item.Q1_Answer === 1).length / (_data.filter(item => item.survey_num === 1 && item.version === 1).length)) * 100)}%</p>
                                     </div>
                                     <div style={{ marginLeft: '20px', background: '#ffffff', padding: '15px', borderRadius: '10px' }}>
-                                        <p className="text-14">
-                                            Did Gandhi die before or after the age of 144? (GROUP2)
+                                        <p>
+                                            Did Gandhi die before or after the age of <strong>32</strong>?
                                         </p>
                                         {/* <PiA filter={[1, 0]} pData={p1} keyName='Q1_Answer' tag={['Before', 'After']} /> */}
                                         <hr></hr>
-                                        <p>Before: {Math.round((p1.filter(item => item.Q1_Answer === 0).length / (_data.filter(item => item.survey_num === 1 && item.version === 2).length)) * 100)}%</p>
-                                        <p>After: {Math.round((p1.filter(item => item.Q1_Answer === 1).length / (_data.filter(item => item.survey_num === 1 && item.version === 2).length)) * 100)}%</p>
+                                        <p className="text-14">Before: {Math.round((p1.filter(item => item.Q1_Answer === 0).length / (_data.filter(item => item.survey_num === 1 && item.version === 2).length)) * 100)}%</p>
+                                        <p className="text-14">After: {Math.round((p1.filter(item => item.Q1_Answer === 1).length / (_data.filter(item => item.survey_num === 1 && item.version === 2).length)) * 100)}%</p>
                                     </div>
                                 </div>
 
                                 <div className="mt-2" style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
                                     <div>
-                                        <Box pData={p2} name='Group1_Q2_Answer' keyName='Q2_Answer' />
+                                        <Box pData={p2} name='Judgement 1 Group 1 answer' keyName='Q2_Answer' Xname=' ' Yname='age'/>
                                     </div>
                                     <div style={{ marginLeft: '20px' }}>
-                                        <Box pData={p3} name='GROUP2_Q2_Answer' keyName='Q2_Answer' />
+                                        <Box pData={p3} name='Judgement 1 Group 2 answer' keyName='Q2_Answer' Xname=' ' Yname='age'/>
                                     </div>
+                                    <div style={{ marginLeft: '20px' }}>
+                                        <DualBoxEchart
+                                            pData1={p2} name1='Judgement 1 Group 1 answer' keyName1='Q2_Answer' Xname1=' ' Yname1='age'
+                                            pData2={p3} name2='Judgement 1 Group 2 answer' keyName2='Q2_Answer' Xname2=' ' Yname2='age'
+                                        />
+                                    </div>
+
                                     <div>
-                                        <Box pData={p4} name='ALL_GROUP_Q2_Answer' keyName='Q2_Answer' />
+                                        <Box pData={p4} name='Judgement 1 Total answer' keyName='Q2_Answer' Xname=' ' Yname='age'/>
                                     </div>
                                 </div>
                             </div>
@@ -235,28 +245,40 @@ function Dashboard({ show }) {
 
                                     <div className="bbg-white">
                                         <div class={'container-tips text-14'}>
-                                            <p className="m-0 tips">You are generally a charitable person and regularly donate. Your favorite charity reached out recently and requested a donation of $400.</p>
+                                            <p className="m-0 tips">You are generally a charitable person and regularly donate. Your favorite charity reached out recently and requested a donation of <strong>$400</strong>.
+                                            </p>
                                         </div>
 
-                                        <Box pData={survey2Data.filter(item => item.version === 1)} name='survey2_Q1_Answer'
-                                            keyName='Q1_Answer' />
+                                        <Box pData={survey2Data.filter(item => item.version === 1)} name='Judgement 2 Group 1 answer'
+                                            keyName='Q1_Answer' Xname=' ' Yname='$'/>
                                     </div>
 
                                     <div className="bbg-white ml-20">
                                         <div class={'container-tips text-14'}>
-                                            <p className="m-0 tips">You are generally a charitable person and regularly donate. Your favorite charity reached out recently and requested a donation of $400.</p>
+                                            <p className="m-0 tips">You are generally a charitable person and regularly donate. Your favorite charity reached out recently and requested a donation of <strong>$5</strong>.
+                                            </p>
                                         </div>
 
-                                        <Box pData={survey2Data.filter(item => item.version === 2)} name='survey2_Q2_Answer'
-                                            keyName='Q1_Answer' />
+                                        <Box pData={survey2Data.filter(item => item.version === 2)} name='Judgement 2 Group 2 answer'
+                                            keyName='Q1_Answer' Xname=' ' Yname='$' />
                                     </div>
 
                                     <div className="bbg-white ml-20 mt-20">
                                         <div class={'container-tips text-14'}>
 
                                         </div>
+
+                                        <CombinedBoxEchart
+                                            dataGroup1={survey2Data.filter(item => item.version === 1)}
+                                            dataGroup2={survey2Data.filter(item => item.version === 2)}
+                                            name1='Group 1'
+                                            name2='Group 2'
+                                            keyName='Q1_Answer'
+                                        />
+
+
                                         <div>
-                                            <Box pData={p2} name='ALL_GROUP_Q2_Answer' keyName='Q2_Answer' />
+                                            <Box pData={survey2Data.filter(item => item.version === 1 || item.version === 2)} name='Judgement 2 Total answer' keyName='Q1_Answer' Xname=' ' />
                                         </div>
                                     </div>
 
@@ -312,7 +334,7 @@ function Dashboard({ show }) {
                                 <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
                                     <div className="bbg-white">
                                         <div class={'container-tips text-14'}>
-                                            <p className="m-0 text-left mt-4">A: 400 (out of 600) people will die from this disease;Vaccine B: with 1/3 probability, nobody dies; with 2/3 probability all 600 will die.</p>
+                                            <p className="m-0 text-left mt-4">A: 400 (out of 600) people will die from this disease;</p>
                                             <p className="m-0 text-left mt-4">B: with 1/3 probability, nobody dies; with 2/3 probability all 600 will die.</p>
                                         </div>
                                         {/* <PiA filter={[1, 2]} pData={survey3Data.filter(item => item.version === 1)}
@@ -365,13 +387,13 @@ function Dashboard({ show }) {
                                 </div>
 
                                 <div className="mb-20 cbg-white text-black p-4 rounded-md">
-                                    <p className="m-0 tips">On a "6-point scale" with 6 being very good, and 1 being very bad, how would you evaluate the drug’s effect?</p>
+                                    <p className="m-0 tips">MedCo Inc. just developed a breakthrough therapy for a rare disease and did a study on its effectiveness. On a "6-point scale" with 6 being very good, and 1 being very bad, how would you evaluate the drug’s effect?</p>
                                 </div>
 
                                 <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
                                     <div className="bbg-white">
                                         <div className="container-tips text-14">
-                                            <p className="m-0 text-center mt-4">MedCo Inc. just developed a breakthrough therapy for a rare disease and did a study on its effectiveness. 100 patients took the medicine and 30 patients did not get better.</p>
+                                            <p className="m-0 text-center mt-4"> 100 patients took the medicine and <strong>70 patients got better</strong>.</p>
                                         </div>
                                         {/* <PiA isDiyData filter={[1, 2, 3, 4, 5, 6]}
                                             pData={survey6Data.filter(item => item.version === 1)} name='survey4_Q1_Answer'
@@ -388,12 +410,13 @@ function Dashboard({ show }) {
                                     </div>
                                     <div className="bbg-white ml-20">
                                         <div className="container-tips text-14">
-                                            <p className="m-0 text-center mt-4">MedCo Inc. just developed a breakthrough therapy for a rare disease and did a study on its effectiveness. 100 patients took the medicine and 30 patients did not get better.</p>
+                                            <p className="m-0 text-center mt-4">100 patients took the medicine and <strong>30
+                                                patients did not get better</strong>.</p>
                                         </div>
                                         {/* <PiA isDiyData filter={[1, 2, 3, 4, 5, 6]}
                                             pData={survey6Data.filter(item => item.version === 2)} name='survey4_Q2_Answer'
                                             keyName='Q1_Answer' tag={['1', '2', '3', '4', '5', '6']} /> */}
-                                        <hr /><hr />
+                                        <hr />
                                         <p>1: {Math.round((survey6Data.filter(item => item.Q1_Answer === 1 && item.version === 2).length / (survey6Data.filter(item => item.version === 2).length)) * 100)}%</p>
                                         <p>2: {Math.round((survey6Data.filter(item => item.Q1_Answer === 2 && item.version === 2).length / (survey6Data.filter(item => item.version === 2).length)) * 100)}%</p>
                                         <p>3: {Math.round((survey6Data.filter(item => item.Q1_Answer === 3 && item.version === 2).length / (survey6Data.filter(item => item.version === 2).length)) * 100)}%</p>

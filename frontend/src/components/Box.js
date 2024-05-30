@@ -9,11 +9,16 @@ import {
   CardText
 } from "reactstrap";
 
-function BoxEchart({ pData, name, keyName }) {
+function BoxEchart({ pData, name, keyName, Xname, Yname}) {
   const chartRefaBox = useRef(null);
   const chartInstanceRef = useRef(null);
 
+
   useEffect(() => {
+    const sourceData = pData.map(item => item[keyName]);
+    const avg = (sourceData.reduce((acc, val) => acc + val, 0) / sourceData.length).toFixed(2);
+    const max = Math.max(...sourceData).toFixed(2);
+    const min = Math.min(...sourceData).toFixed(2);
 
     if(name==='survey2'){
       console.log('pData',pData)
@@ -26,7 +31,7 @@ function BoxEchart({ pData, name, keyName }) {
           left: 'center'
         },
         {
-           text: '',// 'upper: Q3 + 1.5 * IQR \nlower: Q1 - 1.5 * IQR',
+          text: '',// 'upper: Q3 + 1.5 * IQR \nlower: Q1 - 1.5 * IQR',
           borderColor: '#999',
           borderWidth: 1,
           textStyle: {
@@ -48,7 +53,7 @@ function BoxEchart({ pData, name, keyName }) {
         {
           transform: {
             type: 'boxplot',
-            config: { itemNameFormatter: 'group {value}' }
+            config: { itemNameFormatter: Xname }
           }
         },
         {
@@ -60,6 +65,19 @@ function BoxEchart({ pData, name, keyName }) {
         trigger: 'item',
         axisPointer: {
           type: 'shadow'
+        },
+        formatter: function (params) {
+          if (params.seriesType === 'boxplot') {
+            return [
+              `Max: ${max}<br/>`,
+              `Upper Quartile: ${params.data[4]}<br/>`,
+              `Median: ${params.data[3]}<br/>`,
+              `Lower Quartile: ${params.data[2]}<br/>`,
+              `Min: ${min}<br/>`,
+              `Average: ${avg}`
+            ].join('');
+          }
+          return `Point Value: ${params.data[1]}`;
         }
       },
       grid: {
@@ -80,7 +98,7 @@ function BoxEchart({ pData, name, keyName }) {
       },
       yAxis: {
         type: 'value',
-        name: 'age',
+        name: Yname,
         splitArea: {
           show: true
         }
