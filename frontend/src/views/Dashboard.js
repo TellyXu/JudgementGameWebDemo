@@ -218,12 +218,12 @@ function Dashboard({ show }) {
                                     <div style={{ marginLeft: '20px' }}>
                                         <Box pData={p3} name='Judgement 1 Group 2 answer' keyName='Q2_Answer' Xname=' ' Yname='age'/>
                                     </div>
-                                    <div style={{ marginLeft: '20px' }}>
-                                        <DualBoxEchart
-                                            pData1={p2} name1='Judgement 1 Group 1 answer' keyName1='Q2_Answer' Xname1=' ' Yname1='age'
-                                            pData2={p3} name2='Judgement 1 Group 2 answer' keyName2='Q2_Answer' Xname2=' ' Yname2='age'
-                                        />
-                                    </div>
+                                    {/*<div style={{ marginLeft: '20px' }}>*/}
+                                    {/*    <DualBoxEchart*/}
+                                    {/*        pData1={p2} name1='Judgement 1 Group 1 answer' keyName1='Q2_Answer' Xname1=' ' Yname1='age'*/}
+                                    {/*        pData2={p3} name2='Judgement 1 Group 2 answer' keyName2='Q2_Answer' Xname2=' ' Yname2='age'*/}
+                                    {/*    />*/}
+                                    {/*</div>*/}
 
                                     <div>
                                         <Box pData={p4} name='Judgement 1 Total answer' keyName='Q2_Answer' Xname=' ' Yname='age'/>
@@ -268,13 +268,13 @@ function Dashboard({ show }) {
 
                                         </div>
 
-                                        <CombinedBoxEchart
-                                            dataGroup1={survey2Data.filter(item => item.version === 1)}
-                                            dataGroup2={survey2Data.filter(item => item.version === 2)}
-                                            name1='Group 1'
-                                            name2='Group 2'
-                                            keyName='Q1_Answer'
-                                        />
+                                        {/*<CombinedBoxEchart*/}
+                                        {/*    dataGroup1={survey2Data.filter(item => item.version === 1)}*/}
+                                        {/*    dataGroup2={survey2Data.filter(item => item.version === 2)}*/}
+                                        {/*    name1='Group 1'*/}
+                                        {/*    name2='Group 2'*/}
+                                        {/*    keyName='Q1_Answer'*/}
+                                        {/*/>*/}
 
 
                                         <div>
@@ -297,7 +297,7 @@ function Dashboard({ show }) {
 
                                 <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center' }}>
                                     <div className="bbg-white-400">
-                                        <div class={'container-tips text-14'}>
+                                        <div class={'container-tips text-14'} style={{height:'150px'}}>
                                             <p className="m-0 tips">You are shopping for a luxurious gray pinstripe suit for $425. You are about to buy it, and then another customer whispers that the exact same suit is on sale for $418 at another store 15 minutes away.</p>
                                         </div>
                                         {/* <PiA filter={[0, 1]} pData={survey4Data.filter(item => item.version === 1)}
@@ -307,7 +307,7 @@ function Dashboard({ show }) {
                                         <p>NO: {Math.round((survey4Data.filter(item => item.Q1_Answer === 1 && item.version === 1).length / (survey4Data.filter(item => item.version === 1).length)) * 100)}%</p>
                                     </div>
                                     <div className="bbg-white-400 ml-20">
-                                        <div class={'container-tips text-14'}>
+                                        <div class={'container-tips text-14'} style={{height:'150px'}}>
                                             <p className="m-0 tips">You go to a store and find a nice pen for $25. Then you remember that the same pen is on sale for $18 at another store 15 minutes away.</p>
                                         </div>
                                         {/* <PiA filter={[0, 1]} pData={survey4Data.filter(item => item.version === 2)}
@@ -484,8 +484,14 @@ function Dashboard({ show }) {
                                                     pData={survey7Data.filter(item => item.version === 3)} name='poll 1-3'
                                                     keyName='Q1_Answer' tag={['0', '1', '2', '3', '4', '5']} /> */}
                                                 <hr />
-                                                <p>YES: {Math.round((survey7Data.filter(item => item.Q1_Answer === 1 && item.version === 2).length / (survey7Data.filter(item => item.version === 2).length)) * 100)}%</p>
-                                                <p>NO: {Math.round((survey7Data.filter(item => item.Q1_Answer === 2 && item.version === 2).length / (survey7Data.filter(item => item.version === 2).length)) * 100)}%</p>
+                                                {/*<p>0: {Math.round((survey7Data.filter(item => item.Q1_Answer === 0 && item.version === 3).length / (survey7Data.filter(item => item.version === 3).length)) * 100)}%</p>*/}
+                                                <p>1: {Math.round((survey7Data.filter(item => item.Q1_Answer === 1 && item.version === 3).length / (survey7Data.filter(item => item.version === 3).length)) * 100)}%</p>
+                                                <p>2: {Math.round((survey7Data.filter(item => item.Q1_Answer === 2 && item.version === 3).length / (survey7Data.filter(item => item.version === 3).length)) * 100)}%</p>
+                                                <p>3: {Math.round((survey7Data.filter(item => item.Q1_Answer === 3 && item.version === 3).length / (survey7Data.filter(item => item.version === 3).length)) * 100)}%</p>
+                                                <p>4: {Math.round((survey7Data.filter(item => item.Q1_Answer === 4 && item.version === 3).length / (survey7Data.filter(item => item.version === 3).length)) * 100)}%</p>
+                                                <p>5: {Math.round((survey7Data.filter(item => item.Q1_Answer === 5 && item.version === 3).length / (survey7Data.filter(item => item.version === 3).length)) * 100)}%</p>
+
+
                                             </div>
                                         </div>
                                     </div>
@@ -504,7 +510,7 @@ function Dashboard({ show }) {
                                     <p style={{ marginBottom: 0 }}>(not a misdemeanor) on a scale of 1-10; 1=lowest risk, 10=highest risk</p>
                                     <div style={{ display: 'flex', margin: '0 auto', justifyContent: 'center' }}>
                                         <div style={{ textAlign: 'center' }}>
-                                            <h5 style={{ marginBottom: 0 }}>2-1</h5>
+                                            <h5 style={{ marginBottom: 0 }}>Person 1</h5>
                                             <div>
                                                 {/* <PiA isDiyData filter={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
                                                     pData={survey8Data.filter(item => item.version === 1)} name='poll 2-1'
@@ -523,7 +529,7 @@ function Dashboard({ show }) {
                                             </div>
                                         </div>
                                         <div style={{ textAlign: 'center', marginLeft: '30px' }}>
-                                            <h5 style={{ marginBottom: 0 }}>2-2</h5>
+                                            <h5 style={{ marginBottom: 0 }}>Person 2</h5>
                                             <div>
                                                 {/* <PiA isDiyData filter={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
                                                     pData={survey8Data.filter(item => item.version === 2)} name='poll 2-2'
