@@ -87,7 +87,7 @@ function Game13() {
                             To what extent did you find the tool useful?
                         </Label>
                         <Label htmlFor="ageComparisonDropdown">
-                            5-point scale. Not at all useful – Very useful
+                            5-point scale, 1=not at all useful, 5=very useful
                         </Label>
                         <UncontrolledDropdown>
                             <DropdownToggle caret color="primary">
