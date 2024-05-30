@@ -351,8 +351,8 @@ function Dashboard({ show }) {
                                         {/* <PiA filter={[3, 4]} pData={survey3Data.filter(item => item.version === 2)}
                                             name='survey3_Q2_Answer' keyName='Q1_Answer' tag={['C', 'D']} /> */}
                                         <hr></hr>
-                                        <p>A: {Math.round((survey3Data.filter(item => item.Q1_Answer === 3 && item.version === 2).length / (survey3Data.filter(item => item.version === 2).length)) * 100)}%</p>
-                                        <p>B: {Math.round((survey3Data.filter(item => item.Q1_Answer === 4 && item.version === 2).length / (survey3Data.filter(item => item.version === 2).length)) * 100)}%</p>
+                                        <p>C: {Math.round((survey3Data.filter(item => item.Q1_Answer === 3 && item.version === 2).length / (survey3Data.filter(item => item.version === 2).length)) * 100)}%</p>
+                                        <p>D: {Math.round((survey3Data.filter(item => item.Q1_Answer === 4 && item.version === 2).length / (survey3Data.filter(item => item.version === 2).length)) * 100)}%</p>
                                     </div>
                                 </div>
                             </div>
