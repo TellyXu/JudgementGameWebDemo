@@ -84,6 +84,7 @@ function ScrollTransparentNavbar() {
               Carey Business School
             </NavbarBrand>
 
+
             <UncontrolledTooltip target="navbar-brand1">
               Center for Digital Health and Artificial Intelligence
             </UncontrolledTooltip>
