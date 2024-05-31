@@ -48,7 +48,7 @@ function GandhiSurvey() {
         };
 
         try {
-            const response = await fetch('http://localhost:8000/submit', {
+            const response = await fetch('http://localhost:8001/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -72,7 +72,7 @@ function GandhiSurvey() {
     };
 
     const getResult = async () => {
-        fetch("http://localhost:8000/find", { method: 'POST' })
+        fetch("http://localhost:8001/find", { method: 'POST' })
             .then((response) => response.json())
             .then(({ data, code }) => {
                 console.log('data' + code, data)
