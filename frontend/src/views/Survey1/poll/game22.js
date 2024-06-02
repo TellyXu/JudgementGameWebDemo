@@ -31,7 +31,7 @@ function Game22() {
         };
 
         try {
-            const response = await fetch('http://localhost:8001/submit', {
+            const response = await fetch('https://student-judgementgamewebdemo.onrender.com/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -52,7 +52,7 @@ function Game22() {
     };
 
     const getResult = async () => {
-        fetch("http://localhost:8001/find", { method: 'POST' })
+        fetch("https://student-judgementgamewebdemo.onrender.com/find", { method: 'POST' })
             .then((response) => response.json())
             .then(({ data, code }) => {
                 console.log('data' + code, data)
